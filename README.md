@@ -2,7 +2,11 @@
 
 ## Overview
 
-The Modernization Agents for SAP on AWS are sample agents that help enterprises modernize their most business-critical SAP workloads, custom ABAP programs, SAP Business Warehouse (BW), and SAP Process Integration / Process Orchestration (PI/PO), ahead of SAP's approaching end of standard support. The solution is built on Kiro, AWS's agentic development tool that turns natural-language prompts into structured specs and then into working code, documentation, and tests through spec-driven development. It pairs MCP servers that make live SAP and source systems readable to an AI agent with Kiro Powers that carry a workload from analysis through to converted, cloud-native target objects. These are design-time agents: they connect to a sandbox or development environment, read metadata directly from the running systems, and produce converted objects that then go through your standard SDLC and testing mechanisms before promotion to production. Key capabilities include the flexibility to use your LLM of choice, so teams can select the model that best fits their cost and performance needs, and an enterprise-grade security posture: read-only access to source systems, per-command confirmation before any write, and support for principal propagation so each caller's own SAP identity flows through for compliance and audit requirements.
+Kiro is AWS's AI-powered engineering agent, designed for enterprises to build production-ready software. With Kiro, customers can build across large codebases with parallel agents, which is ideal for complex, resource-intensive projects like SAP modernizations. This repository provides Kiro-based sample agents that customers and partners can use to accelerate the modernization and deployment of custom SAP Advanced Business Application Programming (SAP ABAP) programs, SAP Business Warehouse (SAP BW), and SAP Process Integration and SAP Process Orchestration (SAP PI / PO) on AWS. These agents bring together model choice, a Model Context Protocol (MCP) server, and Kiro Powers. Kiro Powers include steering documents for repeatable workflows, modernization best practices, and safety hooks that guide each workload from analysis to converted, cloud-native target objects.
+
+SAP is where many organizations house their most critical business logic and data. Custom SAP ABAP programs drive core processes like finance, order management, and supply chain operations. SAP BW underpins the reporting and analytics that enterprises rely on for planning and decision-making. SAP PI / PO serve as the middleware connecting SAP to hundreds of external systems, trading partners, and applications. Modernizing these workloads manually is what makes SAP transformations so time and resource intensive. Additionally, with the end of standard support for SAP BW, SAP PI / PO, and on-premises SAP ERP Central Component (SAP ECC) approaching, customers need to modernize to SAP's cloud-native systems.
+
+With these sample agents, customers can accelerate their SAP modernizations, which are historically one of the most resource-intensive undertakings in enterprise IT. With a single prompt, the sample agents can mass-modernize thousands of lines of SAP ABAP code, migrate hundreds of end-of-support SAP PI/PO interfaces to SAP BTP Integration Suite, and move SAP Business Warehouse (BW) data models to SAP Datasphere in Business Data Cloud (BDC) in hours, not months.
 
 **Supported use cases:**
 
@@ -62,7 +66,7 @@ AWS Modernization Agents for SAP can be deployed on:
 
 Detailed deployment guides and documentation are provided for each option.
 
-**6. Which SAP environments do AWS Modernization Agents for SAP connect to?**
+## 6. Which SAP environments do AWS Modernization Agents for SAP connect to?
 
 AWS Modernization Agents for SAP are intended to connect to non-production SAP environments such as development, sandbox, or QA systems. These agents perform code analysis, conversion, interface conversion, and more - activities that align with the discover, prepare and explore phases of SAP Activate methodology. Converted code and artifacts are then transported to SAP production system through transport and change management processes, ensuring full governance and control.
 
@@ -82,7 +86,7 @@ There is no cost for the agents themselves. Customers and partners can register,
 
 ## 9. Which IDEs can the AWS Modernization Agents for SAP be used with?
 
-We are distributing the agent sample code designed primarily for Kiro, our recommended agentic IDE. The agents are delivered as MCP servers (via CloudFormation templates) and consumed through Kiro using natural-language prompts, with the AI usage covered under the Kiro subscription (no separate AI Units charge). Because the agents follow the Model Context Protocol (MCP) standard, they aren't locked to a single tool. Customers can tailor the steering files and MCP setup to work with other agentic IDEs. Kiro is where we focus our enablement and testing.
+We are distributing the agent sample code designed primarily for Kiro, an AI-powered agentic IDE by AWS. These sample agents are delivered with steering documents to produce deterministic outputs, as part of Kiro Powers that automatically load the right tools and workflows for each SAP workload. These agents are consumed through Kiro using natural-language prompts. Because the agents are built on an open, standards-based integration approach, they aren't locked to a single IDE. Customers can port the steering files and connection setup to work with other agentic IDEs. We will ship new features to Kiro first.
 
 ## 10. What security measures are in place?
 
